@@ -3,13 +3,11 @@ package com.looppay;
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.looppay.service.AIDLService;
@@ -44,7 +42,9 @@ public class PermissionActivity extends Activity {
         }else{
             Log.i("PERMSISSION","Take picture right is not granted");
         }
-        requestPermissions(new String[]{Manifest.permission.CAMERA}, PERM_REQ_CODE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, PERM_REQ_CODE);
+        }
     }
 
     @Override
