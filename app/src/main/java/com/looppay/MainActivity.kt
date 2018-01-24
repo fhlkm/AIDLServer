@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
                 var mDeviceRsult = DeviceResult()
                 mDeviceRsult.name ="TPD"
                 mDeviceRsult.brand ="Looppay"
+
                 mCallback.onSuccess(mDeviceRsult)
             }else{
                 Log.i(TAG, "callback is null")
@@ -35,6 +36,10 @@ class MainActivity : AppCompatActivity() {
 
         ask_permission.setOnClickListener {
             askTakePciturePermission();
+        }
+
+        finish.setOnClickListener {
+            finish();
         }
 
     }
