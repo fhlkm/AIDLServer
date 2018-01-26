@@ -1,0 +1,96 @@
+ext {
+
+    supportLibVersion = "27.0.0"
+    googleServiceVersion = "11.6.0"
+    retrofitVersion = "2.3.0"
+    okhttpVersion = "3.9.0"
+    kotlinVersion = "1.2.10"
+    glideVersion = "3.8.0"
+    jUnitVersion = "4.12"
+    ankoVersion = "0.10.3"
+    openStreetMapVersion = "5.6.5"
+    libphonenumberVersion = "7.2.2"
+    httpClientVersion = "1.20.0"
+    rippleBackgroundVersion = "1.0.1"
+    testFairyVersion = "1.5.5"
+    zXingVersion = "3.3.0"
+    kAndroidVersion = "0.8.3"
+    fastJsonVersion = "1.1.59.android"
+    fastJsonConverterVersion = "2.2.0"
+    rxjava2Version = "2.1.6"
+    rxBinding2Version = "2.0.0"
+    rxAndroid2Version = "2.0.1"
+    kotlinCoroutinesVersion = "0.19.3"
+
+    dependencies = [
+            // support
+            appcompatV7           : "com.android.support:appcompat-v7:$supportLibVersion",
+            supportV13            : "com.android.support:support-v13:$supportLibVersion",
+            supportV4             : "com.android.support:support-v4:$supportLibVersion",
+            design                : "com.android.support:design:$supportLibVersion",
+            recyclerview          : "com.android.support:recyclerview-v7:$supportLibVersion",
+            cardview              : "com.android.support:cardview-v7:$supportLibVersion",
+            supportAnnotation     : "com.android.support:support-annotations:$supportLibVersion",
+            customTabs            : "com.android.support:customtabs:$supportLibVersion",
+
+            // jUnit
+            jUnit                 : "junit:junit:$jUnitVersion",
+
+            // RxJava2
+            rxandroid2            : "io.reactivex.rxjava2:rxandroid:$rxAndroid2Version",
+            rxjava2               : "io.reactivex.rxjava2:rxjava:$rxjava2Version",
+            rxbinding2           : "com.jakewharton.rxbinding2:rxbinding:$rxBinding2Version",
+
+            // Http
+            retrofit              : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitAdapterRxjava2: "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            okhttp                : "com.squareup.okhttp3:okhttp:$okhttpVersion",
+            okhttpLogging         : "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
+            fastJson              : "com.alibaba:fastjson:$fastJsonVersion",
+            fastJsonConverter     : "org.ligboy.retrofit2:converter-fastjson-android:$fastJsonConverterVersion",
+
+            // glide
+            glide                 : "com.github.bumptech.glide:glide:$glideVersion",
+
+            // Google
+            googleBaseService      : "com.google.android.gms:play-services-base:$googleServiceVersion",
+            googleMapService      : "com.google.android.gms:play-services-maps:$googleServiceVersion",
+            googleLocationService : "com.google.android.gms:play-services-location:$googleServiceVersion",
+            googleFCMService      : "com.google.firebase:firebase-messaging:$googleServiceVersion",
+            googleVisionService   : "com.google.android.gms:play-services-vision:$googleServiceVersion",
+            googleZxing           : "com.google.zxing:core:$zXingVersion",
+            googlePhoneNumber     : "com.googlecode.libphonenumber:libphonenumber:$libphonenumberVersion",
+            googleHttpClient      : "com.google.http-client:google-http-client:$httpClientVersion",
+
+            // Kotlin
+            kotlinStdlib          : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            kAndroid              : "com.pawegio.kandroid:kandroid:$kAndroidVersion@aar",
+
+            //Anko with DSL
+            ankoSdk               : "org.jetbrains.anko:anko-sdk25:$ankoVersion",
+            ankoSupportV4         : "org.jetbrains.anko:anko-support-v4:$ankoVersion",
+            ankoAppcompat         : "org.jetbrains.anko:anko-appcompat-v7:$ankoVersion",
+            ankoDesign            : "org.jetbrains.anko:anko-design:$ankoVersion",
+            ankoRecyclerview      : "org.jetbrains.anko:anko-recyclerview-v7:$ankoVersion",
+            ankoCardView          : "org.jetbrains.anko:anko-cardview-v7:$ankoVersion",
+            ankoSql               : "org.jetbrains.anko:anko-sqlite:$ankoVersion",
+            ankoCoroutines        : "org.jetbrains.anko:anko-coroutines:$ankoVersion",
+//            ankoCommon           : "org.jetbrains.anko:anko-common:$ankoVersion",
+
+            // kotlinCoroutines
+            kotlinCoroutines      : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion",
+
+            // OpenStreetMap
+            openStreetMap         : "org.osmdroid:osmdroid-android:$openStreetMapVersion",
+
+            // Android-Easing
+            androidEasing         : "it.sephiroth.android.library.easing:android-easing:+",
+
+            // ripple
+            rippleBackground      : "com.skyfishjy.ripplebackground:library:$rippleBackgroundVersion",
+            // appSee
+            appSee                : "com.appsee:appsee-android:+",
+            // testFairy
+            testFairy             : "testfairy:testfairy-android-sdk:$testFairyVersion@aar"
+    ]
+}

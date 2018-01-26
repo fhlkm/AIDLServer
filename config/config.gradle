@@ -1,0 +1,11 @@
+ext {
+
+    isTurnOnProductionSign = false
+    isTurnOnProductionDebug = true
+    versionCode = 1
+    versionName = "0.0.1"
+    /*
+    Do not change this, ndkPath is only used for Bamboo build
+     */
+    ndkPath = "/opt/dev/adt/android-ndk-r12b"
+}

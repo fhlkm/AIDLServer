@@ -1,4 +1,4 @@
-package com.looppay
+package com.loop
 
 import org.junit.Test
 
