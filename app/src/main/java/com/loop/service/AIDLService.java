@@ -1,6 +1,10 @@
 package com.loop.service;
 
+import android.app.ActivityManager;
 import android.app.Service;
+import android.arch.lifecycle.Lifecycle;
+import android.arch.lifecycle.ProcessLifecycleOwner;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,6 +35,7 @@ public class AIDLService  extends Service{
         public int bindDevice(String accessToken, byte[] deviceCertifcate, IBindDeviceCallback callback) throws RemoteException {
 
             Log.i(TAG, "init mIBindDeviceCallback" );
+            printCurrentServiceStatus();
             mIBindDeviceCallback = callback;
             mAccessToken = accessToken;
             mDeviceCertifcate = deviceCertifcate;
@@ -44,6 +49,17 @@ public class AIDLService  extends Service{
     };
 
 
+    private void printCurrentServiceStatus(){
+        //Check if app is in background
+       if( ProcessLifecycleOwner.get().getLifecycle().getCurrentState() == Lifecycle.State.CREATED){
+           Log.i(TAG,"app is in background");
+       }
+        //Check if app is in foreground
+        if(ProcessLifecycleOwner.get().getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)){
+            Log.i(TAG,"app is in foreground");
+        }
+
+    }
 
 
 
