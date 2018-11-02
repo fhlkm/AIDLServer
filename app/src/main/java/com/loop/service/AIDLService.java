@@ -51,16 +51,22 @@ public class AIDLService  extends Service{
 
     private void printCurrentServiceStatus(){
         //Check if app is in background
-       if( ProcessLifecycleOwner.get().getLifecycle().getCurrentState() == Lifecycle.State.CREATED){
+       if( isServiceRunningInForeground(getApplicationContext(), AIDLService.class)){
+           Log.i(TAG,"app is in foreground");
+       }else{
            Log.i(TAG,"app is in background");
        }
-        //Check if app is in foreground
-        if(ProcessLifecycleOwner.get().getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)){
-            Log.i(TAG,"app is in foreground");
-        }
-
     }
 
+    public static boolean isServiceRunningInForeground(Context context, Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return service.foreground;
+            }
+        }
+        return false;
+    }
 
 
     @Nullable
